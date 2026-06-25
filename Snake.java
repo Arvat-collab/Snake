@@ -13,10 +13,10 @@ public class Snake {
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setSize(boardWidth , boardHeight );
       
-      snakerer snakerer = new snakerer(boardWidth, boardHeight);
-      frame.add(snakerer);
+      Snakerer Snakerer = new Snakerer(boardWidth, boardHeight);
+      frame.add(Snakerer);
       frame.pack();
-      snakerer.requestFocus();
+      Snakerer.requestFocus();
     }
     
    

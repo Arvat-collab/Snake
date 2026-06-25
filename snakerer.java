@@ -6,7 +6,7 @@ import java.util.Random;
 
 
 //tile
-public class snakerer extends JPanel implements ActionListener, KeyListener {   
+public class Snakerer extends JPanel implements ActionListener, KeyListener {   
   Tile apple;
   Tile snakehead;
   Random random;
@@ -32,7 +32,7 @@ public class snakerer extends JPanel implements ActionListener, KeyListener {
       int boardHeight;
       int cellSize = 25;
         //background color, constructor 
-        snakerer(int boardWidth, int boardHeight) {
+        Snakerer(int boardWidth, int boardHeight) {
           this.boardWidth = boardWidth;
           this.boardHeight = boardHeight;
           setPreferredSize(new Dimension(boardWidth , boardHeight ));
@@ -41,7 +41,6 @@ public class snakerer extends JPanel implements ActionListener, KeyListener {
           random = new Random();
           apple = new Tile(15,15);
           snakehead = new Tile(5,5);
-          food();
           gameLoop = new Timer(67, this);
           gameLoop.start();
          snakebody = new ArrayList<Tile>();
@@ -100,12 +99,9 @@ public class snakerer extends JPanel implements ActionListener, KeyListener {
           }
           
        
-        
- 
 
 
         
-      
 
 
          public void move() {

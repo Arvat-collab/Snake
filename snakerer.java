@@ -13,7 +13,6 @@ public class snakerer extends JPanel implements ActionListener, KeyListener {
   Timer gameLoop;
   int speedX;
   int speedY;
-  Tile arrayList;
   ArrayList<Tile> snakebody;
   Tile bodypart;
   boolean gameOver = false;
@@ -106,11 +105,7 @@ public class snakerer extends JPanel implements ActionListener, KeyListener {
 
 
         
-        //randomizer
-        public void food(){
-         apple.x = random.nextInt(boardWidth / cellSize); 
-        apple.y = random.nextInt(boardHeight / cellSize); 
-        }
+      
 
 
          public void move() {

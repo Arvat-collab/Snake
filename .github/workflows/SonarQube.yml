@@ -1,4 +1,4 @@
-name: Build
+name: SonarQube
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
 
 jobs:
   sonarqube:
-    name: SonarQube
     runs-on: windows-latest
 
     steps:
@@ -26,6 +25,6 @@ jobs:
         run: javac *.java
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v5
+        uses: SonarSource/sonarqube-scan-action@7006c4492b2e0ee0f816d36501671557c97f5995
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

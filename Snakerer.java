@@ -16,7 +16,7 @@ public class Snakerer extends JPanel implements ActionListener, KeyListener {
   ArrayList<Tile> snakebody;
   Tile bodypart;
   boolean gameOver = false;
-   private class Tile {
+   class Tile {
      int x;
      int y;
      Tile(int x, int y) {

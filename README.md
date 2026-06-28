@@ -1,4 +1,3 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=PROJECT_KEY&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=PROJECT_KEY)
 Snakerer is a desktop application built in Java using Swing. It recreates the classic Snake game where the player controls a snake that grows by collecting apples while avoiding collisions with walls and itself.
 
 The project is managed with Maven and includes JUnit 5 unit tests, JaCoCo code coverage, and Checkstyle for code quality.

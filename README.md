@@ -22,7 +22,7 @@ Git (optional)
 
 Running the Project
 Clone the repository:
-git clone https://github.com/your-username/Snake.git
+git clone https://github.com/Arvat-collab/Snake/tree/main
 cd Snake
 Compile the project:
 mvn clean compile

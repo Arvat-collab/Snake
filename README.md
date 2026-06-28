@@ -44,6 +44,7 @@ mvn verify
 The coverage report will be generated in:
 
 target/site/jacoco/
+
 Controls
 Key	Action
 ↑	Move Up

@@ -28,7 +28,7 @@ public class Snaketest {
        int Sizebeforeapple = game.snakebody.size();
 
        game.move();
-       assertEquals(sizebeforeapple +1, game.snakebody.size());
+       assertEquals(Sizebeforeapple +1, game.snakebody.size());
 
     }
     @Test 

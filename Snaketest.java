@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Snakerertest {
     @Test
-    public void snakecollision() {
+    public void Snakecollision() {
             Snakerer game = new Snakerer(500,500);
             game.snakehead.x = 0;
             game.snakehead.y = 5;
@@ -20,19 +20,19 @@ public class Snakerertest {
  
         }
     @Test 
-    public void snakegrowsapple() {
+    public void Snakegrowsapple() {
        Snakerer game = new Snakerer(500,500);
        game.apple.x = game.snakehead.x;
        game.apple.y = game.snakehead.y;
 
-       int sizebeforeapple = game.snakebody.size();
+       int Sizebeforeapple = game.snakebody.size();
 
        game.move();
-       assertEquals(sizebeforeapple +1, game.snakebody.size());
+       assertEquals(Sizebeforeapple +1, game.snakebody.size());
 
     }
     @Test 
-    public void applemovement(){
+    public void Applemovement(){
           Snakerer game = new Snakerer(500,500);
           game.apple.x = game.snakehead.x;
           game.apple.x = game.snakehead.y;

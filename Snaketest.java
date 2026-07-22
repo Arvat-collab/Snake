@@ -1,48 +1,56 @@
 package com.example;
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class Snakerertest {
+public class SnakererTest {
+
     @Test
-    public void Snakecollision() {
-            Snakerer game = new Snakerer(500,500);
-            game.snakehead.x = 0;
-            game.snakehead.y = 5;
-            
-            game.speedX = -1;
-            game.speedY = 0;
-            game.move();
-            assertTrue(game.gameOver);
+    public void snakeCollision() {
 
- 
-        }
-    @Test 
-    public void Snakegrowsapple() {
-       Snakerer game = new Snakerer(500,500);
-       game.apple.x = game.snakehead.x;
-       game.apple.y = game.snakehead.y;
+        Snakerer game = new Snakerer(500, 500);
 
-       int Sizebeforeapple = game.snakebody.size();
+        game.getSnakeHead().setX(0);
+        game.getSnakeHead().setY(5);
 
-       game.move();
-       assertEquals(Sizebeforeapple +1, game.snakebody.size());
+        game.setSpeedX(-1);
+        game.setSpeedY(0);
 
+        game.move();
+
+        assertTrue(game.isGameOver());
     }
-    @Test 
-    public void Applemovement(){
-          Snakerer game = new Snakerer(500,500);
-          game.apple.x = game.snakehead.x;
-          game.apple.x = game.snakehead.y;
 
-          game.move();
+    @Test
+    public void snakeGrowsAfterEatingApple() {
 
-          assertFalse(game.apple.x == game.snakehead.x &&
-                      game.apple.y == game.snakehead.y);
+        Snakerer game = new Snakerer(500, 500);
 
+        game.getApple().getPosition().setX(game.getSnakeHead().getX());
+        game.getApple().getPosition().setY(game.getSnakeHead().getY());
 
+        int sizeBefore = game.getSnakeBody().size();
 
+        game.move();
+
+        assertEquals(sizeBefore + 1, game.getSnakeBody().size());
+    }
+
+    @Test
+    public void appleMovesAfterBeingEaten() {
+
+        Snakerer game = new Snakerer(500, 500);
+
+        game.getApple().getPosition().setX(game.getSnakeHead().getX());
+        game.getApple().getPosition().setY(game.getSnakeHead().getY());
+
+        game.move();
+
+        assertFalse(
+                game.getApple().getPosition().getX() == game.getSnakeHead().getX()
+                &&
+                game.getApple().getPosition().getY() == game.getSnakeHead().getY()
+        );
     }
 }

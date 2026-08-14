@@ -1,24 +1,29 @@
 package com.example;
 
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 
 public class Snake {
+
     public static void main(String[] args) {
-       int boardWidth = 500;
-       int boardHeight = 500;
-    
-       JFrame frame = new JFrame("Snake");
-      frame.setVisible(true);
-      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.setSize(boardWidth , boardHeight );
-      
-      Snakerer Snakerer = new Snakerer(boardWidth, boardHeight);
-      frame.add(Snakerer);
-      frame.pack();
-      Snakerer.requestFocus();
+        // Rularea interfeței grafice pe firul de execuție EDT (Event Dispatch Thread)
+        SwingUtilities.invokeLater(() -> {
+            int boardWidth = 500;
+            int boardHeight = 500;
+
+            JFrame frame = new JFrame("Snake");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setResizable(false);
+
+            SnakeGame snakeGame = new SnakeGame(boardWidth, boardHeight);
+            frame.add(snakeGame);
+            frame.pack();
+
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+
+            snakeGame.requestFocus();
+        });
     }
-    
-   
 }
-
-

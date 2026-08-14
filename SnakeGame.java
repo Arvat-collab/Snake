@@ -156,6 +156,8 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
                 || head.getY() >= boardHeight / CELL_SIZE) {
             gameOver = true;
         }
+
+        // Verificare coliziune cu propriul corp
         for (Tile bodyPart : body) {
             if (head.collides(bodyPart)) {
                 gameOver = true;
@@ -194,12 +196,15 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+        // Nu este necesară nicio acțiune pe eliberarea tastei
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
+        // Nu este necesară nicio acțiune pe tastare
     }
 
+    // Getter-e și Setter-e pentru compatibilitate și încapsulare
     public Tile getSnakeHead() {
         return snake.getHead();
     }

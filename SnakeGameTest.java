@@ -1,15 +1,14 @@
 package com.example;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SnakererTest {
+
+public class SnakeGameTest {
 
     @Test
-    public void snakeCollision() {
-
-        Snakerer game = new Snakerer(500, 500);
+    public void testSnakeCollision() {
+        SnakeGame game = new SnakeGame(500, 500);
 
         game.getSnakeHead().setX(0);
         game.getSnakeHead().setY(5);
@@ -23,9 +22,8 @@ public class SnakererTest {
     }
 
     @Test
-    public void snakeGrowsAfterEatingApple() {
-
-        Snakerer game = new Snakerer(500, 500);
+    public void testSnakeGrowsAfterEatingApple() {
+        SnakeGame game = new SnakeGame(500, 500);
 
         game.getApple().getPosition().setX(game.getSnakeHead().getX());
         game.getApple().getPosition().setY(game.getSnakeHead().getY());
@@ -38,9 +36,8 @@ public class SnakererTest {
     }
 
     @Test
-    public void appleMovesAfterBeingEaten() {
-
-        Snakerer game = new Snakerer(500, 500);
+    public void testAppleMovesAfterBeingEaten() {
+        SnakeGame game = new SnakeGame(500, 500);
 
         game.getApple().getPosition().setX(game.getSnakeHead().getX());
         game.getApple().getPosition().setY(game.getSnakeHead().getY());
@@ -49,8 +46,7 @@ public class SnakererTest {
 
         assertFalse(
                 game.getApple().getPosition().getX() == game.getSnakeHead().getX()
-                &&
-                game.getApple().getPosition().getY() == game.getSnakeHead().getY()
+                && game.getApple().getPosition().getY() == game.getSnakeHead().getY()
         );
     }
 }

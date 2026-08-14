@@ -1,19 +1,25 @@
 package com.example;
+
 import java.util.Random;
+
+
 public class Fruit {
-      private Tile position;
+
+    private final Tile position;
 
     public Fruit(int x, int y) {
-        position = new Tile(x, y);
+        this.position = new Tile(x, y);
     }
 
     public Tile getPosition() {
         return position;
     }
 
-    public void place(Random random, int width, int height, int cellSize) {
-        position.setX(random.nextInt(width / cellSize));
-        position.setY(random.nextInt(height / cellSize));
-    }
     
+    public void place(Random random, int width, int height, int cellSize) {
+        int maxGridX = width / cellSize;
+        int maxGridY = height / cellSize;
+        this.position.setX(random.nextInt(maxGridX));
+        this.position.setY(random.nextInt(maxGridY));
+    }
 }

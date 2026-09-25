@@ -1,7 +1,6 @@
-package com.example;
+package com.example.snake.model;
 
 import java.util.Random;
-
 
 public class Fruit {
 
@@ -15,7 +14,6 @@ public class Fruit {
         return position;
     }
 
-    
     public void place(Random random, int width, int height, int cellSize) {
         int maxGridX = width / cellSize;
         int maxGridY = height / cellSize;

@@ -1,4 +1,4 @@
-package com.example;
+package com.example.snake.model;
 
 import java.util.Objects;
 
@@ -30,7 +30,6 @@ public class Tile {
     public void setY(int y) {
         this.y = y;
     }
-
 
     public boolean collides(Tile other) {
         if (other == null) {

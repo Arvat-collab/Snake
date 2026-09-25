@@ -1,14 +1,15 @@
-package com.example;
+package com.example.snake.ui;
 
+import com.example.snake.ui.SnakeGame;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SnakeGameTest {
 
     @Test
     public void testSnakeCollision() {
-        SnakeGame game = new SnakeGame(500, 500);
+        SnakeGame game = new SnakeGame(600, 600);
 
         game.getSnakeHead().setX(0);
         game.getSnakeHead().setY(5);
@@ -23,7 +24,7 @@ public class SnakeGameTest {
 
     @Test
     public void testSnakeGrowsAfterEatingApple() {
-        SnakeGame game = new SnakeGame(500, 500);
+        SnakeGame game = new SnakeGame(600, 600);
 
         game.getApple().getPosition().setX(game.getSnakeHead().getX());
         game.getApple().getPosition().setY(game.getSnakeHead().getY());
@@ -37,7 +38,7 @@ public class SnakeGameTest {
 
     @Test
     public void testAppleMovesAfterBeingEaten() {
-        SnakeGame game = new SnakeGame(500, 500);
+        SnakeGame game = new SnakeGame(600, 600);
 
         game.getApple().getPosition().setX(game.getSnakeHead().getX());
         game.getApple().getPosition().setY(game.getSnakeHead().getY());
